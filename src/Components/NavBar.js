@@ -5,7 +5,7 @@ function NavBar(){
   return(
     <div className="navbar-fixed">
     <nav>
-      <div className="nav-wrapper">
+      <div className="blue-grey lighten-3 nav-wrapper">
           <NavLink className="left-align brand brand-logo black-text" exact to="/">Gaming Library</NavLink>
         <ul className="right hide-on-med-and-down">
           <li><NavLink className="black-text" exact to="/wishlist">Wishlist</NavLink></li>

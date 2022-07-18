@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
         <NavBar/>
+        <div className='main-content'>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -31,6 +32,7 @@ function App() {
             <h1>404 Page Not Found</h1>
           </Route>
         </Switch>
+        </div>
     </div>
   );
 }

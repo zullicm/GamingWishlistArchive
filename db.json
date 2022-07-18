@@ -1,6 +1,17 @@
 {
   "wishlist": [
+    {
+      "name": "Skyrim",
+      "image": "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
+      "released": true,
+      "id": 1
+    },
+    {
+      "name": "Rocket League",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rocket_League_logo.svg/2560px-Rocket_League_logo.svg.png",
+      "released": true,
+      "id": 2
+    }
   ],
-  "games": [
-  ]
+  "games": []
 }
