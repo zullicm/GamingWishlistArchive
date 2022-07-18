@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Rating from "./Rating";
 
-function Game({ game, changeFav }){
+function Game({ game }){
   const {name, image, platform, description, rating, favorite, id} = game
   const [fav, setFav] = useState(favorite)
 
-  function changeFav(){
+  function changeFav(e){
     const indexObj = {
       "favorite": !fav
     }
@@ -17,11 +17,13 @@ function Game({ game, changeFav }){
       body: JSON.stringify(indexObj)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+
+    console.log(e.target)
 
     setFav(!fav)
-
   }
+
+
 
   return(
     <div className="archive-game">
@@ -29,8 +31,13 @@ function Game({ game, changeFav }){
         <img src={image} />
         <h4 className="game-name">{name}</h4>
       </div>
-      <div onClick={changeFav} className="favorite-btn">
-        {fav ? <p>Unfavorite<i className="material-icons">delete</i></p> : <p>Favorite<i className="material-icons">favorite</i></p>}
+      <div className="favorite-btn">
+        {
+        fav ? 
+        <p value="delete" onClick={changeFav}>Unfavorite<i className="material-icons">delete</i></p> 
+        : 
+        <p value="favorite" onClick={changeFav}>Favorite<i className="material-icons">favorite</i></p>
+        }
       </div>
       <div className="info left-align">
         <p><b>Rating:</b></p><Rating rating={rating} />

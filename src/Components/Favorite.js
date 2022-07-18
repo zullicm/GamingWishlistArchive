@@ -2,30 +2,21 @@ import React,{ useEffect, useState } from "react";
 import Game from "./Game";
 
 function Favorite(){
-  const [favGames, setFavGames] = useState([])
-  const [fav, setFav] = useState(false)
-
+  const [games, setGames] = useState([])
+  
   useEffect(() => {
     fetch("http://localhost:3000/games")
     .then(res => res.json())
-    .then(data => setFavFilter(data))
+    .then(data => setGames(data))
   }, [])
-
-  function setFavFilter(games){
-    const filteredGames = games.filter(game => game.favorite === true)
-    console.log(filteredGames)
-    setFavGames(filteredGames)
-  }
-
-  function changeFav(){
-    setFav(!fav)
-  }
+  
+  const filteredGames = games.filter(game => game.favorite === true)
 
   return(
     <div>
       <h2>A list of all the games you have favorited!</h2>
       <br/>
-      {favGames.map(game => <Game key={game.id}game={game} changeFav={changeFav}/>)}
+      {filteredGames.map(game => <Game key={game.id} game={game} />)}
     </div>
   )
 }
