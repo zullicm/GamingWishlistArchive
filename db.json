@@ -13,5 +13,14 @@
       "id": 2
     }
   ],
-  "games": []
+  "games": [
+    {
+      "name": "Skyrim",
+      "image": "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
+      "platform": "xbox",
+      "description": "fantasy adventure rpg set in old times with dragons!",
+      "rating": "5",
+      "id": 1
+    }
+  ]
 }

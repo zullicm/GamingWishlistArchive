@@ -12,8 +12,7 @@ useEffect(() => {
 }, [])
 
   return(
-    <div>
-      <h3>Here is where you would want to add items to your wishlist</h3>
+    <div className="wishlist">
       <WishlistForm />
       {games.map(game => <WishGame key={game.id} game={game} />)}
     </div>
