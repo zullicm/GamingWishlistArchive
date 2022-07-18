@@ -38,7 +38,8 @@ function ArchiveForm(){
       "image" : img,
       "platform" : platform,
       "description" : description,
-      "rating" : rating
+      "rating" : rating,
+      "favorite" : false
     }
     fetch("http://localhost:3000/games", {
       method: "POST",

@@ -32,11 +32,48 @@
   margin-top: 30px;
 }
 
-.wishlist{
-  margin-top: 30px;
+.archive-game{
+  border-color: black;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 75%;
+  background-color: #587381;
+  border-width: 25px;
+  border-style: double;
+  color: white;
+  border-radius: 10%;
+}
+
+.name-img{
+  margin: 50px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.game-name{
+  margin-bottom: 0px;
+}
+
+.info{
+  color: black;
+}
+
+img{
+ max-width: 200px;
+ min-width: 150px;
+ max-height: 200px;
+ min-height: 150px;
 }
 
 .archive{
+  margin-top: 30px;
+}
+
+.wishlist{
   margin-top: 30px;
 }
 
