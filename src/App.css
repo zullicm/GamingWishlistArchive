@@ -65,6 +65,11 @@
   margin-top: 7%;
 }
 
+.favorite-btn{
+  float: right;
+  margin: 20px;
+}
+
 img{
  max-width: 200px;
  min-width: 150px;

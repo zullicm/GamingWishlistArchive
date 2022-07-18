@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ArchiveForm(){
+function ArchiveForm({ addGame }){
   const [name, setName] = useState("")
   const [img, setImg] = useState("")
   const [platform, setPlatform] = useState("")
@@ -49,7 +49,7 @@ function ArchiveForm(){
       body: JSON.stringify(newGame)
     })
      .then(res => res.json())
-     .then(data => console.log(data))
+     .then(data => addGame(data))
     setName("")
     setImg("")
     setPlatform("")
