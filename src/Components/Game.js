@@ -18,12 +18,48 @@ function Game({ game }){
     })
     .then(res => res.json())
 
-    console.log(e.target)
-
+    if
+    (e.target.className === "delete"){
+      fetch("http://localhost:3000/favorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(game)
+      })
+       .then(res => res.json())
+       .then(data => console.log(data))
+    }
+    else if
+    (e.target.className === "delete material-icons"){
+      fetch("http://localhost:3000/favorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(game)
+      })
+       .then(res => res.json())
+       .then(data => console.log(data))
+    }
+    else if
+    (e.target.className === "fav"){
+      fetch(`http://localhost:3000/favorite/${id}`, {
+        method: "DELETE"
+      })
+      .then(res => res.json())
+      .then(() => console.log(id))
+    }
+    else if
+    (e.target.className === "favorite material-icons"){
+      fetch(`http://localhost:3000/favorite/${id}`, {
+        method: "DELETE"
+      })
+      .then(res => res.json())
+      .then(() => console.log(id))
+    }
     setFav(!fav)
   }
-
-
 
   return(
     <div className="archive-game">
@@ -34,9 +70,9 @@ function Game({ game }){
       <div className="favorite-btn">
         {
         fav ? 
-        <p value="delete" onClick={changeFav}>Unfavorite<i className="material-icons">delete</i></p> 
+        <p className="fav" onClick={changeFav}>Unfavorite<i className="favorite material-icons">delete</i></p> 
         : 
-        <p value="favorite" onClick={changeFav}>Favorite<i className="material-icons">favorite</i></p>
+        <p className="delete" onClick={changeFav}>Favorite<i className="delete material-icons">favorite</i></p>
         }
       </div>
       <div className="info left-align">

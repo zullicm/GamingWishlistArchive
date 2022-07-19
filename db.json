@@ -20,7 +20,7 @@
       "platform": "xbox",
       "description": "fantasy adventure rpg set in old times with dragons!",
       "rating": 5,
-      "favorite": false,
+      "favorite": true,
       "id": 1
     },
     {
@@ -29,9 +29,19 @@
       "platform": "pc",
       "description": "Car soccar with rocket powered cars",
       "rating": "2",
-      "favorite": true,
+      "favorite": false,
       "id": 2
     }
   ],
-  "favorite": []
+  "favorite": [
+    {
+      "name": "Skyrim",
+      "image": "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
+      "platform": "xbox",
+      "description": "fantasy adventure rpg set in old times with dragons!",
+      "rating": 5,
+      "favorite": false,
+      "id": 1
+    }
+  ]
 }
