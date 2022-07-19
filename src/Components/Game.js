@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import DeleteButton from "./DeleteButton";
 import Rating from "./Rating";
 
-function Game({ game }){
+function Game({ game, deleteGame }){
   const {name, image, platform, description, rating, favorite, id} = game
   const [fav, setFav] = useState(favorite)
 
@@ -9,6 +10,16 @@ function Game({ game }){
     const indexObj = {
       "favorite": !fav
     }
+
+    const postObj = {
+      "name": name,
+      "image": image,
+      "platform": platform,
+      "description": description,
+      "rating": rating,
+      "favorite": true
+    }
+
     fetch(`http://localhost:3000/games/${id}`,{
       method: "PATCH",
       headers: {
@@ -25,7 +36,7 @@ function Game({ game }){
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(game)
+        body: JSON.stringify(postObj)
       })
        .then(res => res.json())
        .then(data => console.log(data))
@@ -37,7 +48,7 @@ function Game({ game }){
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(game)
+        body: JSON.stringify(postObj)
       })
        .then(res => res.json())
        .then(data => console.log(data))
@@ -48,7 +59,7 @@ function Game({ game }){
         method: "DELETE"
       })
       .then(res => res.json())
-      .then(() => console.log(id))
+      .then(() => deleteGame(id))
     }
     else if
     (e.target.className === "favorite material-icons"){
@@ -56,10 +67,11 @@ function Game({ game }){
         method: "DELETE"
       })
       .then(res => res.json())
-      .then(() => console.log(id))
+      .then(() => deleteGame(id))
     }
     setFav(!fav)
   }
+
 
   return(
     <div className="archive-game">
@@ -70,7 +82,7 @@ function Game({ game }){
       <div className="favorite-btn">
         {
         fav ? 
-        <p className="fav" onClick={changeFav}>Unfavorite<i className="favorite material-icons">delete</i></p> 
+        <p className="fav" onClick={changeFav}>Unfavorite<i className="favorite material-icons">clear</i></p> 
         : 
         <p className="delete" onClick={changeFav}>Favorite<i className="delete material-icons">favorite</i></p>
         }
@@ -79,6 +91,7 @@ function Game({ game }){
         <p><b>Rating:</b></p><Rating rating={rating} />
         <p><b>Platform:</b> {platform}</p>
         <p><b>Given Description:</b> {description}</p>
+        <DeleteButton />
       </div>
     </div>
   )
