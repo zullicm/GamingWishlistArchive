@@ -7,10 +7,16 @@
       "id": 1
     },
     {
-      "name": "Rocket League",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rocket_League_logo.svg/2560px-Rocket_League_logo.svg.png",
+      "name": "Destiny 2",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Destiny_2_%28artwork%29.jpg/220px-Destiny_2_%28artwork%29.jpg",
       "released": true,
-      "id": 2
+      "id": 3
+    },
+    {
+      "name": "battleblock theater",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/238460/capsule_616x353.jpg?t=1656013055",
+      "released": true,
+      "id": 4
     }
   ],
   "games": [],

@@ -76,7 +76,7 @@ function Game({ game, deleteGame }){
   return(
     <div className="archive-game">
       <div className="name-img">
-        <img src={image} />
+        <img className="img"src={image} />
         <h4 className="game-name">{name}</h4>
       </div>
       <div className="favorite-btn">
