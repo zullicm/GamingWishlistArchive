@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ArchiveForm({ addGame }){
+function ArchiveForm({ addGame, changeInst }){
   const [name, setName] = useState("")
   const [img, setImg] = useState("")
   const [platform, setPlatform] = useState("")
@@ -55,6 +55,7 @@ function ArchiveForm({ addGame }){
     setPlatform("")
     setDescription("")
     setRating(5)
+    changeInst()
   }
 
   return(

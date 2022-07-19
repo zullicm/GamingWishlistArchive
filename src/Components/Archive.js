@@ -20,10 +20,16 @@ function Archive(){
     setShowForm(!showForm)
   }
 
+  function deleteGame(id){
+    const deletedGameList = games.filter(game => game.id !== id)
+    setGames(deletedGameList)
+  }
+
+
   return(
     <div className="archive">
-      {showForm ? <div><button onClick={changeShow}>HIDE FORM</button><br/><br/><ArchiveForm addGame={addGame}/></div> : <button onClick={changeShow}>ADD GAME</button>}
-      {games.map(game => <Game key={game.id} game={game}/>)}
+      {showForm ? <div><button onClick={changeShow}>HIDE FORM</button><br/><br/><ArchiveForm addGame={addGame} /></div> : <div><button onClick={changeShow}>ADD GAME</button> <h1>Add games with the button above!</h1></div>}
+      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame}/>)}
     </div>
   )
 }

@@ -8,6 +8,12 @@ function DeleteButton({ id, onGameDelete }){
     })
     .then(res => res.json())
     .then(() => onGameDelete(id))
+
+    fetch(`http://localhost:3000/favorite/${id}`, {
+      method: "DELETE"
+    })
+    .then(res => res.json())
+    .then(() => onGameDelete(id))
   }
   
   return(
