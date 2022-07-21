@@ -74,7 +74,7 @@ function Game({ game, deleteGame, deleteFrom }){
 
 
   return(
-    <div className="archive-game">
+    <div className={favorite ? "archive-game-fav" : "archive-game"}>
       <div className="name-img">
         <img className="img"src={image} />
         <h4 className="game-name">{name}</h4>

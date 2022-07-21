@@ -46,6 +46,20 @@
   overflow: hidden;
 }
 
+.archive-game-fav{
+  border-color: yellow;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 75%;
+  background-color: #677f8b;
+  border-width: 25px;
+  border-style: double;
+  color: white;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
 .name-img{
   margin: 50px;
   margin-bottom: 25px;
@@ -97,7 +111,7 @@ img{
   margin-top: 20px;
   margin-bottom: 20px;
   width: 33%;
-  background-color: #92000075;
+  background-color: #677f8b;
   border-width: 25px;
   border-style: double;
   color: white;
