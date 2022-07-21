@@ -13,7 +13,9 @@ function Home(){
         <p className="home-info">The process is very simple, click on the tab you wish to be directed too, and fill out the forms so and they'll be added to your lists.
         </p>
         <br/>
+        <h4 className="home-info">NOTE.</h4>
 
+        <p className="home-info">For your favorites list you dont need to add games with forms, given that if a game is part of one of your favorite games you have played, I would guess you have played it. So add it to your archive and then click the favorite and that game will be added to your favorites list.</p>
       </div>
     </div>
   )
