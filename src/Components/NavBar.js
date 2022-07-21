@@ -6,8 +6,8 @@ function NavBar(){
     <div className="navbar-fixed">
     <nav>
       <div className="blue-grey lighten-3 nav-wrapper">
-          <NavLink className="left-align brand brand-logo black-text" exact to="/">Gaming Library</NavLink>
-        <ul className="right hide-on-med-and-down">
+          <NavLink id="nav-logo" exact to="/">Gaming Library</NavLink>
+          <ul className="right hide-on-med-and-down">
           <li><NavLink className="black-text" exact to="/wishlist">Wishlist</NavLink></li>
           <li><NavLink className="black-text" exact to="/archive">Archive</NavLink></li>
           <li><NavLink className="black-text favoriteBtn" exact to="/favorite">Favorite</NavLink></li>

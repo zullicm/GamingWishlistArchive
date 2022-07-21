@@ -87,7 +87,6 @@ img{
   margin-top: 30px;
 }
 
-/* ============================================== */
 .wishlist{
   margin-top: 30px;
 }
@@ -142,4 +141,11 @@ a.button{
 .no{
   color: red;
   background-color: black;
+}
+
+#nav-logo{
+  color: black;
+  float: left;
+  padding-left: 45px;
+  font-size: xx-large;
 }
