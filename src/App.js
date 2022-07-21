@@ -30,6 +30,7 @@ function App() {
           </Route>
           <Route path='*'>
             <h1>404 Page Not Found</h1>
+            <h3>Try clicking the "Gaming Library" logo at the top left of the page</h3>
           </Route>
         </Switch>
         </div>
