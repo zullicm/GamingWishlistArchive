@@ -1,12 +1,6 @@
 {
   "wishlist": [
     {
-      "name": "Skyrim",
-      "image": "https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png",
-      "released": true,
-      "id": 1
-    },
-    {
       "name": "Destiny 2",
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Destiny_2_%28artwork%29.jpg/220px-Destiny_2_%28artwork%29.jpg",
       "released": true,

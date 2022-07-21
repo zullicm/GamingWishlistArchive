@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DeleteButton from "./DeleteButton";
 import Rating from "./Rating";
 
-function Game({ game, deleteGame }){
+function Game({ game, deleteGame, deleteFrom }){
   const {name, image, platform, description, rating, favorite, id} = game
   const [fav, setFav] = useState(favorite)
 
@@ -91,7 +91,7 @@ function Game({ game, deleteGame }){
         <p><b>Rating:</b></p><Rating rating={rating} />
         <p><b>Platform:</b> {platform}</p>
         <p><b>Given Description:</b> {description}</p>
-        <DeleteButton onGameDelete={deleteGame} id={id}/>
+        <DeleteButton onGameDelete={deleteGame} id={id} deleteFrom={deleteFrom}/>
       </div>
     </div>
   )

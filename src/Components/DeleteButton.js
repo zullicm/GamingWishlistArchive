@@ -1,15 +1,9 @@
 import React from "react";
 
-function DeleteButton({ id, onGameDelete }){
+function DeleteButton({ id, onGameDelete, deleteFrom }){
 
   function deleteGame(){
-    fetch(`http://localhost:3000/games/${id}`, {
-      method: "DELETE"
-    })
-    .then(res => res.json())
-    .then(() => onGameDelete(id))
-
-    fetch(`http://localhost:3000/favorite/${id}`, {
+    fetch(`http://localhost:3000/${deleteFrom}/${id}`, {
       method: "DELETE"
     })
     .then(res => res.json())

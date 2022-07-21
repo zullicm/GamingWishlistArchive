@@ -29,7 +29,7 @@ function Archive(){
   return(
     <div className="archive">
       {showForm ? <div><button onClick={changeShow}>HIDE FORM</button><br/><br/><ArchiveForm addGame={addGame} /></div> : <div><button onClick={changeShow}>ADD GAME</button> <h1>Add games with the button above!</h1></div>}
-      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame}/>)}
+      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame} deleteFrom="games"/>)}
     </div>
   )
 }

@@ -23,7 +23,7 @@ function Favorite(){
     <div>
       <h2>A list of all the games you have favorited!</h2>
       <br/>
-      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame}/>)}
+      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame} deleteFrom="favorite"/>)}
     </div>
   )
 }
