@@ -12,6 +12,10 @@ useEffect(() => {
   .then(data => setGames(data))
 }, [])
 
+function addGame(newGame){
+  setGames([...games, newGame])
+}
+
 function changeShow(){
   setShowForm(!showForm)
 }
@@ -23,7 +27,7 @@ function onGameDelete(id){
 
   return(
     <div className="wishlist">
-      {showForm ? <div><button onClick={changeShow}>HIDE FORM</button><br/><br/><WishlistForm /></div> : <div><button onClick={changeShow}>ADD GAME</button> <h1>Add games with the button above!</h1></div>}
+      {showForm ? <div><button onClick={changeShow}>HIDE FORM</button><br/><br/><WishlistForm addGame={addGame}/></div> : <div><button onClick={changeShow}>ADD GAME</button> <h1>Add games with the button above!</h1></div>}
       {games.map(game => <WishGame key={game.id} game={game} onGameDelete={onGameDelete} deleteFrom="wishlist"/>)}
     </div>
   )

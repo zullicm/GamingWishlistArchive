@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function WishlistForm(){
+function WishlistForm({ addGame }){
   const [name, setName] = useState("")
   const [img, setImg] = useState("")
   const [released, setReleased] = useState(true)
@@ -37,7 +37,7 @@ function WishlistForm(){
       body: JSON.stringify(newGame)
     })
      .then(res => res.json())
-     .then(data => console.log(data))
+     .then(data => addGame(data))
     setName("")
     setImg("")
     setReleased(true)
