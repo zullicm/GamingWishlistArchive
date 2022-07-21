@@ -149,3 +149,21 @@ a.button{
   padding-left: 45px;
   font-size: xx-large;
 }
+
+#homepage-info{
+  width: 75%;
+  margin: auto;
+  background-color: #aaccdc;
+  border-radius: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-size: x-large;
+  margin-bottom: 100px;
+}
+
+.home-info{
+  width: 75%;
+  margin: auto;
+}
