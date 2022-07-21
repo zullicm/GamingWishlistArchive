@@ -161,6 +161,8 @@ a.button{
   padding-bottom: 30px;
   font-size: x-large;
   margin-bottom: 100px;
+  border-style: double;
+  border-color: black;
 }
 
 .home-info{
