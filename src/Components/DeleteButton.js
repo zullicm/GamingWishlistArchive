@@ -11,7 +11,7 @@ function DeleteButton({ id, onGameDelete, deleteFrom }){
   }
   
   return(
-    <p onClick={deleteGame} className="delete-game" >Delete Game<i class="material-icons">delete</i></p>
+    <p onClick={deleteGame} className="delete-game" >Delete Game<i className="material-icons">delete</i></p>
   )
 }
 

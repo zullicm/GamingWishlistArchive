@@ -68,4 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### json-server --watch db.json
+
+Having a json-server globally installed and running this code is required to run the websites features as all data stored in the background will be on this server.
+I have added some data to the db.json just as reference so that the pages aren't empty when loaded.
+
 # GamingWishlistArchive
+This is a website I built for my phase-2 project in the Flatiron school. The project is meant to be a place to hold all the games you have played and or want to play. I took inspiration from other websites that do the same thing but for other topics. The main purpose of the website is to store games giving you the opportunity to rate them, while giving them a small description and also what platform you played them on. There is also a favoriting system where if you click the favorite button they will be added to the favorites tab. The last feature is the wishlist. This is a place to add games maybe you cant yet afford, they aren't out yet, or have them in your vault for a rainy day so that you dont forget they exist.  
+

@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DeleteButton from "./DeleteButton";
+import FavoriteButton from "./FavoriteButton";
+import GameFavButton from "./GameFavButton";
 import Rating from "./Rating";
 
-function Game({ game, deleteGame, deleteFrom }){
+function Game({ game, deleteGame, deleteFrom, favDelete }){
   const {name, image, platform, description, rating, favorite, id} = game
   const [fav, setFav] = useState(favorite)
+  const [favHelper, setFavHelper] = useState(false)
+
+  useEffect(() => {
+    if(favDelete){
+      setFavHelper(true)
+    }else{setFavHelper(false)}
+  }, [fav])
 
   function changeFav(e){
     const indexObj = {
       "favorite": !fav
     }
-
     const postObj = {
       "name": name,
       "image": image,
@@ -19,7 +27,6 @@ function Game({ game, deleteGame, deleteFrom }){
       "rating": rating,
       "favorite": true
     }
-
     fetch(`http://localhost:3000/games/${id}`,{
       method: "PATCH",
       headers: {
@@ -30,44 +37,44 @@ function Game({ game, deleteGame, deleteFrom }){
     .then(res => res.json())
 
     if
-    (e.target.className === "delete"){
-      fetch("http://localhost:3000/favorite", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postObj)
-      })
-       .then(res => res.json())
-       .then(data => console.log(data))
-    }
-    else if
-    (e.target.className === "delete material-icons"){
-      fetch("http://localhost:3000/favorite", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postObj)
-      })
-       .then(res => res.json())
-       .then(data => console.log(data))
-    }
-    else if
     (e.target.className === "fav"){
-      fetch(`http://localhost:3000/favorite/${id}`, {
-        method: "DELETE"
+      fetch("http://localhost:3000/favorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postObj)
       })
-      .then(res => res.json())
-      .then(() => deleteGame(id))
+       .then(res => res.json())
+       .then(data => console.log(data))
     }
     else if
     (e.target.className === "favorite material-icons"){
+      fetch("http://localhost:3000/favorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postObj)
+      })
+       .then(res => res.json())
+       .then(data => console.log(data))
+    }
+    else if
+    (e.target.className === "delete"){
       fetch(`http://localhost:3000/favorite/${id}`, {
         method: "DELETE"
       })
       .then(res => res.json())
-      .then(() => deleteGame(id))
+      .then(() => favDelete(id))
+    }
+    else if
+    (e.target.className === "delete material-icons"){
+      fetch(`http://localhost:3000/favorite/${id}`, {
+        method: "DELETE"
+      })
+      .then(res => res.json())
+      .then(() => favDelete(id))
     }
     setFav(!fav)
   }
@@ -80,12 +87,7 @@ function Game({ game, deleteGame, deleteFrom }){
         <h4 className="game-name">{name}</h4>
       </div>
       <div className="favorite-btn">
-        {
-        fav ? 
-        <p className="fav" onClick={changeFav}>Unfavorite<i className="favorite material-icons">clear</i></p> 
-        : 
-        <p className="delete" onClick={changeFav}>Favorite<i className="delete material-icons">favorite</i></p>
-        }
+        {favHelper ? <FavoriteButton changeFav={changeFav} fav={fav}/> : <GameFavButton changeFav={changeFav} fav={fav}/>}
       </div>
       <div className="info left-align">
         <p><b>Rating:</b></p><Rating rating={rating} />

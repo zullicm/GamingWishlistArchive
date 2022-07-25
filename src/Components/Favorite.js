@@ -19,11 +19,16 @@ function Favorite(){
     setGames(gameList)
   }
 
+  function favDelete(id){
+    const gameList = games.filter(game => game.id !== id)
+    setGames(gameList)
+  }
+
   return(
     <div>
       <h2>A list of all the games you have favorited!</h2>
       <br/>
-      {games.map(game => <Game key={game.id} game={game} deleteGame={deleteGame} deleteFrom="favorite"/>)}
+      {games.map(game => <Game key={game.id} game={game} favDelete={favDelete} deleteGame={deleteGame} deleteFrom="favorite"/>)}
     </div>
   )
 }
