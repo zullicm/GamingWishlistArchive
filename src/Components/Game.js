@@ -35,7 +35,6 @@ function Game({ game, deleteGame, deleteFrom, favDelete }){
       body: JSON.stringify(indexObj)
     })
     .then(res => res.json())
-
     if
     (e.target.className === "fav"){
       fetch("http://localhost:3000/favorite", {
@@ -93,7 +92,7 @@ function Game({ game, deleteGame, deleteFrom, favDelete }){
         <p><b>Rating:</b></p><Rating rating={rating} />
         <p><b>Platform:</b> {platform}</p>
         <p><b>Given Description:</b> {description}</p>
-        <DeleteButton onGameDelete={deleteGame} id={id} deleteFrom={deleteFrom}/>
+        {favHelper ? null : <DeleteButton onGameDelete={deleteGame} id={id} deleteFrom={deleteFrom}/>}
       </div>
     </div>
   )
